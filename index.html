@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сердце для МУХАММАДЖОНА</title>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        
+        .heart-container {
+            position: relative;
+            text-align: center;
+        }
+        
+        .heart {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            margin: 0 auto;
+            transform: rotate(-45deg) scale(1);
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+        
+        .heart:before {
+            top: -100px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: 100px;
+        }
+        
+        .aura {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 105, 180, 0.6) 0%, rgba(255, 105, 180, 0) 70%);
+            border-radius: 50%;
+            opacity: 0;
+            animation: pulse 2s infinite;
+        }
+        
+        .name {
+            color: white;
+            font-size: 36px;
+            margin-top: 55px;
+            text-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+            font-weight: bold;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: rotate(-45deg) scale(1); }
+            25% { transform: rotate(-45deg) scale(1.1); }
+            50% { transform: rotate(-45deg) scale(1); }
+            75% { transform: rotate(-45deg) scale(1.1); }
+            100% { transform: rotate(-45deg) scale(1); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.7; }
+            70% { transform: translate(-50%, -50%) scale(1.4); opacity: 0; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="aura"></div>
+        <div class="heart"></div>
+        <div class="name">MUHAMMADJON</div>
+    </div>
+</body>
+</html>
